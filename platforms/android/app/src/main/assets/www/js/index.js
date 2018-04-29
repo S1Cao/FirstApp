@@ -1,27 +1,65 @@
-var app = {
-    // Application Constructor
-    initialize: function () {
-        document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
-    },
+// Create a "close" button and append it to each list item
+var myNodelist = document.getElementsByTagName("LI");
+var i;
+for (i = 0; i < myNodelist.length; i++) {
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  myNodelist[i].appendChild(span);
+}
 
-    callAlert: function () {
-        
-        // We care selecting the input box based on id
-        
-       var txt= document.getElementById("txtname");
-        
-        // Shwoing the value of the input box
-        alert("Text was extracted : : " + txt.value);
-    },
+var i;
+var value = [];
+for(i=0;i<taskList.length;i++)
+      {
+        storage.setItem(list+i, taskList[i]);
+        value[i] = storage.getItem(list+i);
+      }
+	  
+// Click on a close button to hide the current list item
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+  }
+}
 
-    onDeviceReady: function () {
+// Add a "checked" symbol when clicking on a list item
+var list = document.querySelector('ul');
+list.addEventListener('click', function(ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('checked');
+  }
+}, false);
+document.getElementById("clickAdd").addEventListener('click', this.myFunction.bind(this), false);
+document.getElementById("btnClick").addEventListener('click', this.callAlert.bind(this), false);
 
-        alert("Device is Ready!");
+// Create a new list item when clicking on the "Add" button
+function newElement() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("myInput").value;
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === '') {
+    alert("You must write something!");
+  } else {
+    document.getElementById("myUL").appendChild(li);
+  }
+  document.getElementById("myInput").value = "";
 
-        //  Adding Button click event
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  li.appendChild(span);
 
-        document.getElementById("btnClick").addEventListener('click', this.callAlert.bind(this), false);
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
     }
-};
-
-app.initialize();
+  }
+}
