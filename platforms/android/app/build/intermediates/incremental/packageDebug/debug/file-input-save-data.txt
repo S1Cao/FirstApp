@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sun Apr 29 17:52:37 AEST 2018
+#Sun Apr 29 19:39:19 AEST 2018
 5.base=D\:\\Study\\GitHub\\FirstApp\\platforms\\android\\app\\build\\intermediates\\assets\\debug
 42.base=D\:\\Study\\GitHub\\FirstApp\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_
 32.set=ANDROID_RESOURCE

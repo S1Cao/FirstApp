@@ -9,14 +9,6 @@ for (i = 0; i < myNodelist.length; i++) {
   myNodelist[i].appendChild(span);
 }
 
-var i;
-var value = [];
-for(i=0;i<taskList.length;i++)
-      {
-        storage.setItem(list+i, taskList[i]);
-        value[i] = storage.getItem(list+i);
-      }
-	  
 // Click on a close button to hide the current list item
 var close = document.getElementsByClassName("close");
 var i;
@@ -35,7 +27,7 @@ list.addEventListener('click', function(ev) {
   }
 }, false);
 document.getElementById("clickAdd").addEventListener('click', this.myFunction.bind(this), false);
-document.getElementById("btnClick").addEventListener('click', this.callAlert.bind(this), false);
+
 
 // Create a new list item when clicking on the "Add" button
 function newElement() {
